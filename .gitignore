@@ -1,2 +1,7 @@
 *
+
 !config.nu
+
+!autoload/
+!autoload/catppuccin*.nu
+

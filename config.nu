@@ -10,4 +10,5 @@ $env.config.cursor_shape = {
 $env.PROMPT_INDICATOR_VI_NORMAL = ''
 $env.PROMPT_INDICATOR_VI_INSERT = ''
 
+alias fg = job unfreeze
 alias ll = ls --all --long

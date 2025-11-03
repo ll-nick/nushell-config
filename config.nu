@@ -10,5 +10,16 @@ $env.config.cursor_shape = {
 $env.PROMPT_INDICATOR_VI_NORMAL = ''
 $env.PROMPT_INDICATOR_VI_INSERT = ''
 
+# Clear line with Ctrl+U
+$env.config.keybindings ++= [{
+    name: clear-line
+    modifier: CONTROL
+    keycode: Char_u
+    mode: vi_insert
+    event: [
+        { edit: Clear }
+    ]
+}]
+
 alias fg = job unfreeze
 alias ll = ls --all --long

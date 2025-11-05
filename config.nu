@@ -6,6 +6,9 @@ $env.config.history.max_size = 5_000_000
 $env.config.history.sync_on_enter = true
 $env.config.history.isolation = true
 
+# Completions
+$env.config.completions.algorithm = "fuzzy"
+
 # Configure vi mode and use cursor shape to indicate mode
 $env.config.edit_mode = 'vi'
 $env.config.cursor_shape = {

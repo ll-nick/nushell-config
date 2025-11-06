@@ -1,6 +1,7 @@
 *
 
 !config.nu
+!history_fzf.nu
 
 !autoload/
 !autoload/catppuccin*.nu

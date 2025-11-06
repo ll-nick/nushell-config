@@ -1,3 +1,5 @@
+use history_fzf.nu main
+
 $env.config.show_banner = false
 
 # History settings
@@ -29,6 +31,18 @@ $env.config.keybindings ++= [{
         { edit: Clear }
     ]
 }]
+
+$env.config.keybindings ++= [{
+    name: history_fzf
+    modifier: control
+    keycode: char_r
+    mode: [emacs , vi_normal, vi_insert]
+    event: {
+      send: executehostcommand
+      cmd: "history_fzf"
+    }
+  }
+]
 
 alias fg = job unfreeze
 alias ll = ls --all --long

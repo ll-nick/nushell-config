@@ -111,7 +111,7 @@ export def main [] {
 
         background: $theme_palette.base
         foreground: $theme_palette.text
-        cursor: $theme_palette.blue
+        cursor: $theme_palette.text
     }
 }
 

@@ -34,3 +34,24 @@ $env.config.keybindings ++= [{
 
 alias fg = job unfreeze
 alias ll = ls --all --long
+
+# Adjust completion menu colors
+$env.config.menus ++= [{
+    name: completion_menu
+    only_buffer_difference: false
+    marker: "| "
+    type: {
+        layout: columnar
+        columns: 4
+        col_width: 20
+        col_padding: 2
+    }
+    style: {
+        text: { fg: $theme_palette.blue }
+        selected_text: { fg: $theme_palette.base bg: $theme_palette.blue }
+        description_text: { fg: $theme_palette.text }
+        match_text: { fg: $theme_palette.blue attr: "u"}
+        selected_match_text: { fg: $theme_palette.base bg: $theme_palette.blue attr: "u"}
+    }
+}]
+

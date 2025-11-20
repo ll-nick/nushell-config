@@ -1,3 +1,5 @@
+source themes/catppuccin_mocha.nu
+
 $env.config.show_banner = false
 
 # History settings

@@ -2,6 +2,6 @@
 
 !config.nu
 
-!autoload/
-!autoload/catppuccin*.nu
+!themes/
+!themes/*.nu
 

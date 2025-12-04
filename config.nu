@@ -21,16 +21,37 @@ $env.config.cursor_shape = {
 $env.PROMPT_INDICATOR_VI_NORMAL = ''
 $env.PROMPT_INDICATOR_VI_INSERT = ''
 
-# Clear line with Ctrl+U
-$env.config.keybindings ++= [{
-    name: clear-line
-    modifier: CONTROL
-    keycode: Char_u
-    mode: vi_insert
-    event: [
-        { edit: Clear }
-    ]
-}]
+$env.config.keybindings ++= [
+    # Clear line with Ctrl+U
+    {
+        name: clear-line
+        modifier: CONTROL
+        keycode: Char_u
+        mode: [ vi_normal vi_insert ]
+        event: [
+            { edit: Clear }
+        ]
+    },
+    # Navigate command history with Alt+K and Alt+J
+    {
+        name: previous-command
+        modifier: ALT
+        keycode: Char_k
+        mode: [ vi_normal vi_insert ]
+        event: [
+            { send: Up }
+        ]
+    },
+    {
+        name: next-command
+        modifier: ALT
+        keycode: Char_j
+        mode: [ vi_normal vi_insert ]
+        event: [
+            { send: Down }
+        ]
+    }
+]
 
 alias fg = job unfreeze
 alias ll = ls --all --long

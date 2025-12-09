@@ -1,7 +1,11 @@
 *
 
+!.gitkeep
+
 !config.nu
 
 !themes/
 !themes/*.nu
+
+!autoload/
 

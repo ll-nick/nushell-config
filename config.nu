@@ -52,6 +52,7 @@ $env.config.keybindings ++= [
 
 alias fg = job unfreeze
 alias ll = ls --all --long
+alias o = xdg-open
 
 # Adjust completion menu colors
 $env.config.menus ++= [{

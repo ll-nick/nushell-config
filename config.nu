@@ -50,6 +50,7 @@ $env.config.keybindings ++= [
     }
 ]
 
+alias activate = overlay use .venv/bin/activate.nu
 alias fg = job unfreeze
 alias ll = ls --all --long
 alias o = xdg-open

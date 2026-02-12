@@ -8,4 +8,5 @@
 !themes/*.nu
 
 !autoload/
+!autoload/python.nu
 

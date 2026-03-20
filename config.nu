@@ -69,7 +69,8 @@ $env.config.menus ++= [{
         text: { fg: $theme_palette.blue }
         selected_text: { fg: $theme_palette.base bg: $theme_palette.blue }
         description_text: { fg: $theme_palette.text }
-        match_text: {  attr: "u"}
+        match_text: { attr: "u" }
+        selected_match_text: { fg: $theme_palette.base bg: $theme_palette.blue attr: "u" }
     }
 }]
 

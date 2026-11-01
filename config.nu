@@ -74,3 +74,23 @@ $env.config.menus ++= [{
     }
 }]
 
+# Activate mise by regenerating the autoload file which captures the current PATH
+do {
+    let mise = "~/.local/bin/mise" | path expand
+    let activation_file = $nu.data-dir | path join "vendor/autoload/00_mise.nu"
+    if not ($mise | path exists) {
+        rm --force $activation_file
+        return
+    }
+    try {
+        let activation = ^$mise activate nu
+        mkdir ($activation_file | path dirname)
+        # Moved into place so that sessions starting in parallel never read a partial file
+        let temporary_file = $"($activation_file).($nu.pid).tmp"
+        $activation | save --force $temporary_file
+        mv --force $temporary_file $activation_file
+    } catch {|error|
+        rm --force $activation_file
+        print --stderr $"Failed to activate mise: ($error.msg)"
+    }
+}
